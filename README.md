@@ -27,7 +27,7 @@ Hardest: clapping (F1=0.70) - visually similar to hugging/dancing
 
 ## Files
 - `nm.ipynb` - full training notebook
-- `nm.pdf` - detailed project report (serbian)
+- `nm.pdf` - detailed project report (Serbian)
 
 ## Requirements
 tensorflow, numpy, matplotlib, scikit-learn

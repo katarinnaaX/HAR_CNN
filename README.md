@@ -4,7 +4,7 @@
 with MobileNetV2, implemented in Python/Keras.
 
 ## Dataset
-- Human Action Recognition dataset — 8,406 images across 10 classes
+- Human Action Recognition dataset - 8,406 images across 10 classes
 - Classes: clapping, cycling, dancing, eating, fighting, hugging, 
   laughing, running, sleeping, using_laptop
 - Train/val/test split: 8000 / 1600 / 406
@@ -23,11 +23,11 @@ with MobileNetV2, implemented in Python/Keras.
 | Test       | 80.79%   |
 
 Best classes: eating (F1=0.99), cycling (F1=0.98)  
-Hardest: clapping (F1=0.70) — visually similar to hugging/dancing
+Hardest: clapping (F1=0.70) - visually similar to hugging/dancing
 
 ## Files
-- `nm.ipynb` — full training notebook
-- `nm.pdf` — detailed project report
+- `nm.ipynb` - full training notebook
+- `nm.pdf` - detailed project report
 
 ## Requirements
 tensorflow, numpy, matplotlib, scikit-learn

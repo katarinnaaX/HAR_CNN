@@ -1,4 +1,4 @@
-# Human Action Recognition using CNN (MobileNetV2)
+# Human Action Recognition using CNN
 
 10-class image classification of human actions using transfer learning 
 with MobileNetV2, implemented in Python/Keras.

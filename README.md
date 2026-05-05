@@ -7,19 +7,16 @@ with MobileNetV2, implemented in Python/Keras.
 - Human Action Recognition dataset - 8,406 images across 10 classes
 - Classes: clapping, cycling, dancing, eating, fighting, hugging, 
   laughing, running, sleeping, using_laptop
-- Train/val/test split: 8000 / 1600 / 406
+- Train/val/test split: 6400 / 1600 / 406
   
 ## Pipeline
-1. **Preprocessing** — images resized to 128×128; pixel values normalized to [−1, 1] via a rescaling layer to match MobileNetV2 input expectations
-2. **Data augmentation** — horizontal flip, rotation (±18°), zoom (5%), contrast (10%); deliberately moderate to avoid degrading training accuracy
-3. **Model** — MobileNetV2 pretrained on ImageNet as frozen feature extractor; custom head: GlobalAveragePooling2D → Dense(64) → Dropout(0.3) → Dense(32) → Dropout(0.3) → Dense(10, softmax)
-4. **Training** — 2-phase: FC-only (lr=1e-3, stopped at epoch 14), then full fine-tuning with BatchNorm layers frozen (lr=1e-5, stopped at epoch 15); early stopping with patience=5 in both phases
-   
-## Model
+1. **Preprocessing** - images resized to 128×128; pixel values normalized to [−1, 1] via a rescaling layer to match MobileNetV2 input expectations
+2. **Data augmentation** - horizontal flip, rotation (±18°), zoom (5%), contrast (10%); deliberately moderate to avoid degrading training accuracy
+3. **Model**
 - Base: MobileNetV2 pretrained on ImageNet (frozen)
 - Head: GlobalAveragePooling2D → Dense(64) → Dense(32) → Dense(10)
-- Training: 2-phase (FC-only, then fine-tuning with lr=1e-5)
 - Regularization: Dropout(0.3), data augmentation, early stopping
+4. **Training** - 2-phase: FC-only then full fine-tuning with BatchNorm layers frozen
 
 ## Results
 | Split      | Accuracy |
